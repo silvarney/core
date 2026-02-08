@@ -19,19 +19,71 @@ const rawItems = [
         ]
     },
     {
-        label: 'Cadastro',
+        label: 'Reserva & Inventário',
+        items: [
+            {
+                label: 'Reservas',
+                icon: 'pi pi-calendar',
+                route: 'bookings.index',
+                permission: 'view_bookings'
+            },
+            {
+                label: 'Mapa de Unidades',
+                icon: 'pi pi-map',
+                route: 'inventory.index',
+                permission: 'view_accommodations'
+            }
+        ]
+    },
+    {
+        label: 'Acomodações',
+        items: [
+            {
+                label: 'Propriedades',
+                icon: 'pi pi-building',
+                route: 'properties.index',
+                permission: 'view_properties'
+            },
+            {
+                label: 'Tipos de Acomodação',
+                icon: 'pi pi-list',
+                route: 'accommodation-types.index',
+                permission: 'view_accommodation_types'
+            },
+            {
+                label: 'Unidades Físicas',
+                icon: 'pi pi-home',
+                route: 'accommodations.index',
+                permission: 'view_accommodations'
+            }
+        ]
+    },
+    {
+        label: 'Tarifário & Datas',
+        items: [
+            {
+                label: 'Temporadas',
+                icon: 'pi pi-sun',
+                route: 'seasons.index',
+                permission: 'view_seasons'
+            },
+            {
+                label: 'Tabela de Preços',
+                icon: 'pi pi-money-bill',
+                route: 'rates.index',
+                permission: 'view_rates'
+            }
+        ]
+    },
+    {
+        label: 'Administração',
         items: [
             {
                 label: 'Usuários',
                 icon: 'pi pi-users',
                 route: 'users.index',
                 permission: 'view_users'
-            }
-        ]
-    },
-    {
-        label: 'Configurações',
-        items: [
+            },
             {
                 label: 'Papéis (Perfis)',
                 icon: 'pi pi-shield',

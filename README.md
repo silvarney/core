@@ -1,4 +1,4 @@
-# Sistema de Gestão de Corretores
+# Sistema de Gestão de Reservas
 
 Este é um sistema desenvolvido em Laravel 12 com Vue 3 (Inertia.js), PrimeVue e Tailwind CSS para gestão de usuários, papéis (perfis) e permissões.
 
@@ -51,6 +51,17 @@ O projeto utiliza o **Laravel Sail** (Docker) para facilitar o desenvolvimento.
    *Ou use `./vendor/bin/sail npm run dev` para desenvolvimento em tempo real.*
 
 ## Acesso Inicial (Desenvolvimento)
+
+A aplicação está configurada para rodar na porta **8001** para evitar conflitos.
+
+**URL**: http://localhost:8001
+
+### Portas dos Serviços
+- **App**: 8001
+- **MySQL**: 3309
+- **Redis**: 6380
+- **MeiliSearch**: 7701
+- **Mailpit**: 8026
 
 O seeder padrão cria os seguintes acessos para teste:
 

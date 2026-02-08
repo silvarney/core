@@ -1,5 +1,5 @@
 services:
-    sgco.test:
+    sgco.core:
         build:
             context: './vendor/laravel/sail/runtimes/8.5'
             dockerfile: Dockerfile

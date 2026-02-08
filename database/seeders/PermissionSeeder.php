@@ -37,6 +37,52 @@ class PermissionSeeder extends Seeder
             // Roles e Permissões
             'manage_roles',
             'manage_permissions',
+
+            // CRM - Properties
+            'view_properties',
+            'create_properties',
+            'edit_properties',
+            'delete_properties',
+            // CRM - Accommodation Types
+            'view_accommodation_types',
+            'create_accommodation_types',
+            'edit_accommodation_types',
+            'delete_accommodation_types',
+            // CRM - Accommodations
+            'view_accommodations',
+            'create_accommodations',
+            'edit_accommodations',
+            'delete_accommodations',
+            // CRM - Amenities
+            'view_amenities',
+            'create_amenities',
+            'edit_amenities',
+            'delete_amenities',
+            // CRM - Seasons
+            'view_seasons',
+            'create_seasons',
+            'edit_seasons',
+            'delete_seasons',
+            // CRM - Rates
+            'view_rates',
+            'create_rates',
+            'edit_rates',
+            'delete_rates',
+            // CRM - Bookings
+            'view_bookings',
+            'create_bookings',
+            'edit_bookings',
+            'delete_bookings',
+            // CRM - Services
+            'view_services',
+            'create_services',
+            'edit_services',
+            'delete_services',
+            // CRM - Payments
+            'view_payments',
+            'create_payments',
+            'edit_payments',
+            'delete_payments',
         ];
 
         foreach ($permissions as $permission) {
@@ -63,6 +109,44 @@ class PermissionSeeder extends Seeder
             'edit_users',
             'view_profile',
             'edit_any_profile',
+
+            // CRM CRM Access
+            'view_properties',
+            'create_properties',
+            'edit_properties',
+            'delete_properties',
+            'view_accommodation_types',
+            'create_accommodation_types',
+            'edit_accommodation_types',
+            'delete_accommodation_types',
+            'view_accommodations',
+            'create_accommodations',
+            'edit_accommodations',
+            'delete_accommodations',
+            'view_amenities',
+            'create_amenities',
+            'edit_amenities',
+            'delete_amenities',
+            'view_seasons',
+            'create_seasons',
+            'edit_seasons',
+            'delete_seasons',
+            'view_rates',
+            'create_rates',
+            'edit_rates',
+            'delete_rates',
+            'view_bookings',
+            'create_bookings',
+            'edit_bookings',
+            'delete_bookings',
+            'view_services',
+            'create_services',
+            'edit_services',
+            'delete_services',
+            'view_payments',
+            'create_payments',
+            'edit_payments',
+            'delete_payments',
         ]);
 
         // Usuário Comum (Acesso básico)

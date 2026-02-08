@@ -57,7 +57,7 @@ const showMobileSidebar = ref(false);
                     <div class="h-9 w-9 bg-blue-600 rounded-lg flex items-center justify-center shadow-sm">
                         <i class="pi pi-home text-white text-lg"></i>
                     </div>
-                    <span class="text-xl font-black text-gray-900 tracking-tighter hidden sm:block">CORRETORES</span>
+                    <span class="text-xl font-black text-gray-900 tracking-tighter hidden sm:block">RESERVAS</span>
                 </Link>
             </div>
 

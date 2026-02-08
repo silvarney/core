@@ -39,6 +39,48 @@ const showingNavigationDropdown = ref(false);
                                 >
                                     Dashboard
                                 </NavLink>
+                                <NavLink
+                                    :href="route('properties.index')"
+                                    :active="route().current('properties.*')"
+                                >
+                                    Propriedades
+                                </NavLink>
+                                <NavLink
+                                    :href="route('accommodation-types.index')"
+                                    :active="route().current('accommodation-types.*')"
+                                >
+                                    Tipos Acomodação
+                                </NavLink>
+                                <NavLink
+                                    :href="route('accommodations.index')"
+                                    :active="route().current('accommodations.*')"
+                                >
+                                    Acomodações
+                                </NavLink>
+                                <NavLink
+                                    :href="route('seasons.index')"
+                                    :active="route().current('seasons.*')"
+                                >
+                                    Temporadas
+                                </NavLink>
+                                <NavLink
+                                    :href="route('rates.index')"
+                                    :active="route().current('rates.*')"
+                                >
+                                    Tarifário
+                                </NavLink>
+                                <NavLink
+                                    :href="route('bookings.index')"
+                                    :active="route().current('bookings.*')"
+                                >
+                                    Reservas
+                                </NavLink>
+                                <NavLink
+                                    :href="route('inventory.index')"
+                                    :active="route().current('inventory.*')"
+                                >
+                                    Mapa de Unidades
+                                </NavLink>
                             </div>
                         </div>
 
@@ -145,6 +187,48 @@ const showingNavigationDropdown = ref(false);
                             :active="route().current('dashboard')"
                         >
                             Dashboard
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('properties.index')"
+                            :active="route().current('properties.*')"
+                        >
+                            Propriedades
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('accommodation-types.index')"
+                            :active="route().current('accommodation-types.*')"
+                        >
+                            Tipos Acomodação
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('accommodations.index')"
+                            :active="route().current('accommodations.*')"
+                        >
+                            Acomodações
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('seasons.index')"
+                            :active="route().current('seasons.*')"
+                        >
+                            Temporadas
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('rates.index')"
+                            :active="route().current('rates.*')"
+                        >
+                            Tarifário
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('bookings.index')"
+                            :active="route().current('bookings.*')"
+                        >
+                            Reservas
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('inventory.index')"
+                            :active="route().current('inventory.*')"
+                        >
+                            Mapa de Unidades
                         </ResponsiveNavLink>
                     </div>
 

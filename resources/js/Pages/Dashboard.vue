@@ -57,7 +57,7 @@ const hasPermission = (permission) => can.value.includes(permission);
         </div>
 
         <div class="mt-8 bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-            <h3 class="text-lg font-bold text-gray-800 mb-4">Bem-vindo ao Sistema de Corretores</h3>
+            <h3 class="text-lg font-bold text-gray-800 mb-4">Bem-vindo ao Sistema de Reservas</h3>
             <p class="text-gray-600 leading-relaxed">
                 Este é o seu painel de controle. Use o menu lateral para navegar entre as entidades do sistema.
                 <span v-if="hasPermission('view_users') || hasPermission('manage_roles') || hasPermission('manage_permissions')">
