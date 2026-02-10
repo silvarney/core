@@ -5,6 +5,7 @@ import { Head, Link, useForm } from '@inertiajs/vue3';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
+import SecondaryButton from '@/Components/SecondaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import Checkbox from '@/Components/Checkbox.vue';
 
@@ -18,6 +19,11 @@ const form = useForm({
     site: '',
     api_key: '',
 });
+
+const generateApiKey = () => {
+    const apiKey = 'sg_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now().toString(36);
+    form.api_key = apiKey;
+};
 
 const submit = () => {
     form.post(route('properties.store'), {
@@ -116,13 +122,22 @@ const submit = () => {
                             <!-- API Key -->
                             <div class="mt-4">
                                 <InputLabel for="api_key" value="Chave API" />
-                                <TextInput
-                                    id="api_key"
-                                    type="text"
-                                    class="mt-1 block w-full"
-                                    v-model="form.api_key"
-                                    placeholder="API key para consumo dos dados"
-                                />
+                                <div class="flex gap-2">
+                                    <TextInput
+                                        id="api_key"
+                                        type="text"
+                                        class="mt-1 block w-full"
+                                        v-model="form.api_key"
+                                        placeholder="API key para consumo dos dados"
+                                    />
+                                    <SecondaryButton 
+                                        type="button" 
+                                        @click="generateApiKey"
+                                        class="mt-1"
+                                    >
+                                        Gerar
+                                    </SecondaryButton>
+                                </div>
                                 <InputError class="mt-2" :message="form.errors.api_key" />
                             </div>
 

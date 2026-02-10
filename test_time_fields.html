@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Time Fields</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/@inertiajs/inertia@1/dist/inertia.min.js"></script>
+    <script src="https://unpkg.com/@inertiajs/inertia-vue3@1/dist/inertia-vue3.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select, textarea { 
+            width: 100%; 
+            padding: 8px; 
+            border: 1px solid #ddd; 
+            border-radius: 4px; 
+            box-sizing: border-box;
+        }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .error { color: red; font-size: 12px; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Teste - Campos de Horário</h1>
+        <p>Verificando se os campos checkin_time e checkout_time aparecem:</p>
+        
+        <form @submit.prevent="submit">
+            <!-- Property -->
+            <div class="form-group">
+                <label for="property_id">Propriedade</label>
+                <select id="property_id" v-model="form.property_id" required>
+                    <option value="" disabled>Selecione uma propriedade</option>
+                    <option v-for="property in properties" :key="property.id" :value="property.id">
+                        {{ property.name }}
+                    </option>
+                </select>
+                <div class="error" v-if="form.errors.property_id">{{ form.errors.property_id }}</div>
+            </div>
+
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Nome (ex: Suíte Master)</label>
+                <input type="text" id="name" v-model="form.name" required />
+                <div class="error" v-if="form.errors.name">{{ form.errors.name }}</div>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+                <label for="description">Descrição</label>
+                <textarea id="description" v-model="form.description" rows="3"></textarea>
+                <div class="error" v-if="form.errors.description">{{ form.errors.description }}</div>
+            </div>
+
+            <!-- Capacity Grid -->
+            <div class="grid">
+                <div class="form-group">
+                    <label for="capacity_adults">Adultos</label>
+                    <input type="number" id="capacity_adults" v-model="form.capacity_adults" min="0" required />
+                    <div class="error" v-if="form.errors.capacity_adults">{{ form.errors.capacity_adults }}</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="capacity_children">Crianças</label>
+                    <input type="number" id="capacity_children" v-model="form.capacity_children" min="0" required />
+                    <div class="error" v-if="form.errors.capacity_children">{{ form.errors.capacity_children }}</div>
+                </div>
+            </div>
+
+            <!-- Size -->
+            <div class="form-group">
+                <label for="size_m2">Tamanho (m²)</label>
+                <input type="number" id="size_m2" v-model="form.size_m2" min="0" />
+                <div class="error" v-if="form.errors.size_m2">{{ form.errors.size_m2 }}</div>
+            </div>
+
+            <!-- Base Price -->
+            <div class="form-group">
+                <label for="base_price">Preço Base (Diária)</label>
+                <input type="number" id="base_price" step="0.01" v-model="form.base_price" required />
+                <div class="error" v-if="form.errors.base_price">{{ form.errors.base_price }}</div>
+            </div>
+
+            <!-- TIME FIELDS - THE IMPORTANT PART -->
+            <div class="grid">
+                <div class="form-group">
+                    <label for="checkin_time">Horário de Check-in</label>
+                    <input 
+                        type="time" 
+                        id="checkin_time" 
+                        v-model="form.checkin_time" 
+                        required 
+                    />
+                    <div class="error" v-if="form.errors.checkin_time">{{ form.errors.checkin_time }}</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkout_time">Horário de Check-out</label>
+                    <input 
+                        type="time" 
+                        id="checkout_time" 
+                        v-model="form.checkout_time" 
+                        required 
+                    />
+                    <div class="error" v-if="form.errors.checkout_time">{{ form.errors.checkout_time }}</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <button type="submit" style="background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px;">
+                    Testar Formulário
+                </button>
+            </div>
+        </form>
+
+        <div style="margin-top: 20px; padding: 15px; background: #f0f0f0; border-radius: 4px;">
+            <h3>Valores atuais:</h3>
+            <pre>{{ JSON.stringify(form, null, 2) }}</pre>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    properties: [
+                        { id: 1, name: 'Propriedade Teste 1' },
+                        { id: 2, name: 'Propriedade Teste 2' }
+                    ],
+                    form: {
+                        property_id: '',
+                        name: '',
+                        description: '',
+                        capacity_adults: 2,
+                        capacity_children: 0,
+                        size_m2: '',
+                        base_price: '',
+                        checkin_time: '14:00',
+                        checkout_time: '11:00',
+                        errors: {}
+                    }
+                }
+            },
+            methods: {
+                submit() {
+                    alert('Formulário testado! Valores: ' + JSON.stringify(this.form, null, 2));
+                }
+            },
+            mounted() {
+                console.log('Component mounted successfully');
+                console.log('Check-in time field:', document.getElementById('checkin_time'));
+                console.log('Check-out time field:', document.getElementById('checkout_time'));
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

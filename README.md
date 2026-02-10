@@ -66,7 +66,7 @@ A aplicação está configurada para rodar na porta **8001** para evitar conflit
 O seeder padrão cria os seguintes acessos para teste:
 
 ### Administrador do Sistema (Super Admin)
-- **E-mail**: `admin@corretores.com`
+- **E-mail**: `admin@reservas.com`
 - **Senha**: `admin123`
 
 ### Usuário de Teste

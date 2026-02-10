@@ -15,6 +15,7 @@ onMounted(() => {
 });
 
 defineExpose({ focus: () => input.value.focus() });
+defineOptions({ inheritAttrs: false });
 </script>
 
 <template>
@@ -22,5 +23,6 @@ defineExpose({ focus: () => input.value.focus() });
         class="rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
         v-model="model"
         ref="input"
+        v-bind="$attrs"
     />
 </template>

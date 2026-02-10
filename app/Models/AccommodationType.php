@@ -2,10 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class AccommodationType extends Model
 {
@@ -19,6 +18,8 @@ class AccommodationType extends Model
         'capacity_children',
         'size_m2',
         'base_price',
+        'checkin_time',
+        'checkout_time',
     ];
 
     public function uniqueIds(): array

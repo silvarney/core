@@ -158,7 +158,7 @@ class PermissionSeeder extends Seeder
         ]);
 
         // 3. Criação de Usuário Administrador Padrão
-        $adminEmail = 'admin@corretores.com';
+        $adminEmail = 'admin@reservas.com';
         $adminUser = \App\Models\User::updateOrCreate(
             ['email' => $adminEmail],
             [

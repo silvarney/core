@@ -45,7 +45,10 @@ class AccommodationTypeController extends Controller
             'description' => 'nullable|string',
             'capacity_adults' => 'required|integer|min:0',
             'capacity_children' => 'required|integer|min:0',
+            'size_m2' => 'nullable|numeric|min:0',
             'base_price' => 'required|numeric|min:0',
+            'checkin_time' => 'required|date_format:H:i',
+            'checkout_time' => 'required|date_format:H:i',
         ]);
 
         AccommodationType::create($validated);
@@ -83,7 +86,10 @@ class AccommodationTypeController extends Controller
             'description' => 'nullable|string',
             'capacity_adults' => 'required|integer|min:0',
             'capacity_children' => 'required|integer|min:0',
+            'size_m2' => 'nullable|numeric|min:0',
             'base_price' => 'required|numeric|min:0',
+            'checkin_time' => 'required|date_format:H:i',
+            'checkout_time' => 'required|date_format:H:i',
         ]);
 
         $accommodationType->update($validated);

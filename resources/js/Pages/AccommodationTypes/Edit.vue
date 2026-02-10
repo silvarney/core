@@ -20,6 +20,8 @@ const form = useForm({
     capacity_children: props.accommodationType.capacity_children,
     size_m2: props.accommodationType.size_m2,
     base_price: props.accommodationType.base_price,
+    checkin_time: props.accommodationType.checkin_time || '14:00',
+    checkout_time: props.accommodationType.checkout_time || '11:00',
 });
 
 const submit = () => {
@@ -137,6 +139,34 @@ const submit = () => {
                                     required
                                 />
                                 <InputError class="mt-2" :message="form.errors.base_price" />
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                                <!-- Check-in Time -->
+                                <div>
+                                    <InputLabel for="checkin_time" value="Horário de Check-in" />
+                                    <input
+                                        id="checkin_time"
+                                        type="time"
+                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                        v-model="form.checkin_time"
+                                        required
+                                    />
+                                    <InputError class="mt-2" :message="form.errors.checkin_time" />
+                                </div>
+
+                                <!-- Check-out Time -->
+                                <div>
+                                    <InputLabel for="checkout_time" value="Horário de Check-out" />
+                                    <input
+                                        id="checkout_time"
+                                        type="time"
+                                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                        v-model="form.checkout_time"
+                                        required
+                                    />
+                                    <InputError class="mt-2" :message="form.errors.checkout_time" />
+                                </div>
                             </div>
 
                             <div class="flex items-center justify-end mt-4">
